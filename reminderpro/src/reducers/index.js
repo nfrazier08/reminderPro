@@ -1,4 +1,4 @@
-import { ADD_REMINDER } from '../constants';
+import { ADD_REMINDER, DELETE_REMINDER } from '../constants';
 
 //Define helper reminder function with 'action' as it's only parameter
     //Called in first case below
@@ -7,6 +7,12 @@ const reminder = (action) => {
         text: action.text,
         id: Math.random()
     }
+}
+
+const removeById= (state=[], id)=> {
+    const reminders = state.filter(reminder => reminder.id !== id);
+    console.log('new reduced reminders', reminders)    
+    return reminders
 }
 
 //One reducer as a constant
@@ -18,6 +24,9 @@ const reminders = (state = [], action) => {
             reminders = [...state, reminder(action)];
             console.log('reminders as state', reminders);
             return reminders
+        case DELETE_REMINDER: 
+            reminders = removeById(state, action.id);
+            return reminders;
         default:
             return state;
     }
