@@ -1,6 +1,6 @@
 //Import ADD_REMINDER constant
 
-import { ADD_REMINDER } from '../constants';
+import { ADD_REMINDER, DELETE_REMINDER } from '../constants';
 
 //Make action creator (function that returns the object!)
 //Call fxn, declare it as constant
@@ -14,4 +14,15 @@ export const addReminder = (text) => {
     console.log('action in addReminder', action);
     return action
 }
+
+//Function that handles deleting the reminders
+export const deleteReminder = (id) => {
+    const action = {
+        type: DELETE_REMINDER, 
+        id
+     }
+     console.log('deleting in actions', action)
+     return action;
+}
+
 

@@ -33,3 +33,8 @@ Brings in two functions
 
 **Map State to Props**
 Used so we can recognize redux state in a component
+
+**Whenever you add redux logic!!**
+1. Define a constant
+2. Make an action creator
+3. Amend or create a reducer
