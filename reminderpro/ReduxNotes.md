@@ -20,3 +20,16 @@ Action creator-
             payload: {}
         }
     }
+
+**Reducers**
+    -Take state in an action and return a new state, modify state in a new way
+    -Never mutate the state directly
+        -Take the state and return new instances of it
+
+**Connect Function**
+Brings in two functions
+    1. map state to props
+    2. map dispatch to props fxn
+
+**Map State to Props**
+Used so we can recognize redux state in a component
