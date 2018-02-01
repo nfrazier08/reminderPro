@@ -24,8 +24,11 @@ class App extends Component {
                 {
                     reminders.map(reminder => {
                         return (
-                            <li key={reminder.id} className="list-group-item">
+                            <li key={reminder.id} className="list-group-item total-list">
                                 <div> {reminder.text}</div>
+                                <div className="list-item delete-button">
+                                    &#x2715;
+                                </div>
                             </li>
                         )
                     })
@@ -41,7 +44,7 @@ class App extends Component {
                     Reminder Pro
                 </div>
 
-                <div className="form-inline">
+                <div className="form-inline reminder-form">
                     <div className="form-group">
                         <input  
                             className="form-control"
@@ -56,10 +59,9 @@ class App extends Component {
                         onClick={() => this.addReminder()}
                     >
                         Add Reminder
-                    </button>
-
-                    {this.renderReminders()}
+                    </button>                    
                 </div>
+                {this.renderReminders()}
             </div>
         )
     }
