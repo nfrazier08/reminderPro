@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // import { bindActionCreators} from 'redux'
-import { addReminder, deleteReminder } from '../actions';
+import { addReminder, deleteReminder, clearReminder } from '../actions';
 import moment from 'moment'
 
 
@@ -16,7 +16,7 @@ class App extends Component {
 
     addReminder() {
         console.log('this.state.dueDate', this.state.dueDate)
-        this.props.addReminder(this.state.text, this.state.dueDate)
+        this.props.addReminder(this.state.text, this.state.dueDate)        
     }
 
     deleteReminder(id){
@@ -82,6 +82,13 @@ class App extends Component {
                     </button>                    
                 </div>
                 {this.renderReminders()}
+
+                <div
+                    className="btn btn-danger"
+                    onClick={()=>this.props.clearReminder()}
+                >
+                    Clear All Reminders
+                </div>
             </div>
         )
     }
@@ -105,5 +112,5 @@ function mapStateToProps(state){
 //SHORT CUT:
 //Since we are only adding addReminder
 //And take out dispatchToProps fxn above
-export default connect(mapStateToProps, {addReminder, deleteReminder})(App)
+export default connect(mapStateToProps, {addReminder, deleteReminder, clearReminder})(App)
 
