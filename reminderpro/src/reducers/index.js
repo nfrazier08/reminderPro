@@ -3,7 +3,7 @@ import { ADD_REMINDER, DELETE_REMINDER } from '../constants';
 //Define helper reminder function with 'action' as it's only parameter
     //Called in first case below
 const reminder = (action) => {
-    let {text, dueDate} = action
+    let {text, dueDate} = action;
     return {        
         id: Math.random(),
         text, 
