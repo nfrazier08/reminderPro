@@ -38,3 +38,6 @@ Used so we can recognize redux state in a component
 1. Define a constant
 2. Make an action creator
 3. Amend or create a reducer
+
+**sfcookie**
+built specifically for helping react get access to user cookies
