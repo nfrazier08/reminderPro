@@ -1,5 +1,8 @@
 Some Redux Notes:
 
+So what's happening with redux?
+User interaction => Dispatch action from react component => Reducer evaluates action and determine new state => new state information arrives at component via connect and triggers re-render
+
 Redux actions are javascript objects
     -They must have a 'type' property
         -This tells redux what type of action is being performed
